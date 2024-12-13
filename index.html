@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+        }
+
+        /* Style for the navigation bar */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #444;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        /* Styling on hover */
+        .navbar a:hover {
+            background-color: #666;
+            color: #ffcc00;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        /* Style for the top-left name */
+        .name {
+            position: absolute;
+            top: 70px;
+            left: 70px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+       /* Style for contact information */
+       .contact-info {
+            position: absolute;
+            top: 100px;
+            left: 70px;
+            font-size: 16px;
+            color: #333;
+        }
+        .contact-info img {
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+
+        /* Style for About Me section */
+        #about {            
+            padding: 100px;
+            display: flex;
+            align-items: center;
+            background-color: #e6f7ff;
+            border-top: 2px solid #444;
+        }
+
+        #about img {            
+            border-radius: 50%;
+            width: 450px;
+            height: 450px;
+            margin-right: 20px;
+        }
+
+        #about h2 {            
+            font-size: 75px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        #about p {
+            font-size: 40px;
+            color: #555;            
+            margin: 0 auto;
+        }
+
+        /* Style for Skills section */
+        #skills {
+            padding: 50px;
+            background-color: #f9f9f9;
+            border-top: 2px solid #444;
+            display: block;
+            unicode-bidi: isolate;
+        }
+
+        #skills h2 {
+            text-align: left;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .all_skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        <!--
+            .skill {
+            text-align: center;
+            max-width: 150px;
+        }            
+        -->
+
+        .skill {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .skill h6 {
+            font-size: 18px;
+            margin: 10px 0 5px;
+        }
+
+        .skill p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Style for the Submit Skills notification */
+        .submit-skills {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .submit-skills img {
+            width: 200px;
+            height: auto;
+        }
+
+        /* Style for Project Details section */
+        #projects {
+            padding: 50px;
+            background-color: #eaf7f0;
+            border-top: 2px solid #444;
+        }
+
+        #projects h2 {
+            text-align: left;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .submit-projects {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .submit-projects img {
+            width: 200px;
+            height: auto;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .project {
+            background-color: #eaf7f0;         
+            width: 80%;
+            padding: 20px;            
+        }
+
+        <!--
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        -->
+
+        .project h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 16px;
+            color: #555;
+        }
+        .project:not(:last-child) {
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* Style for Recommendations section */
+        #recommendations {
+            padding: 50px;
+            background-color: #f7e6ff;
+            border-top: 2px solid #444;
+        }
+
+        #recommendations h2 {
+            text-align: left;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .submit-recommendations {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .submit-recommendations img {
+            width: 200px;
+            height: auto;
+        }
+
+        .recommendation-list {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .recommendation {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommendation h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .recommendation p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top-left styled name -->
+    <div class="name">Venkateshwara Rao</div>
+
+    <!-- Contact information -->
+    <div class="contact-info">
+        <div>
+            <img src="email-logo.png" alt="Email logo" width="22.5" height="15">
+            venkat@gmail.com
+        </div>
+        <div>
+            <img src="phone-logo.png" alt="Phone logo" width="15" height="15">
+            +1234567890
+        </div>
+    </div>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#projects">Project Details</a>
+        <a href="#skills">Skills</a>
+        <a href="#recommendations">Recommendations</a>
+    </div>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <img src="profile-image.png" alt="Profile Image">
+            <div>
+                <h2>Venkateshwara Rao</h2>
+                <p>Hello! I am a passionate learner with expertise in web development, programming, and design. I love exploring new technologies and creating innovative solutions to real-world problems. Welcome to my profile!</p>
+            </div>
+        </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="submit-skills">
+            <!--<img src="Submit-skills.png" alt="3 new skills added">-->
+        </div>
+        <div class="all_skills">
+            <div class="skill">
+                <img src="HTML5.png" alt="HTML Logo">
+                <h6>HTML</h6>
+                <p>2 years experience</p>
+            </div>  
+
+            <div class="skill">
+                <img src="js.png" alt="JavaScript Logo">
+                <h6>JavaScript</h6>
+                <p>3 years experience</p>
+            </div>  
+
+            <div class="skill">
+                <img src="node.png" alt="Node Logo">
+                <h6>Node</h6>
+                <p>1 year experience</p>
+            </div>  
+
+            <div class="skill">
+                <img src="java.png" alt="Java Logo">
+                <h6>Java</h6>
+                <p>9 years experience</p>
+            </div>  
+
+            <div class="skill">
+                <img src="python.png" alt="Python Logo">
+                <h6>Python</h6>
+                <p>4 years experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section id="projects">
+        <h2>Project</h2>
+        <div class="submit-projects">
+            <!--<img src="Submit-projects.png" alt="3 new projects added">-->
+        </div>
+        <div class="project-list">
+            <div class="project">
+                <h3>E-Commerce Website</h3>
+                <ul>
+                    <li>Developed a fully functional e-commerce platform using React and Node.js. Features include user authentication, product search, and payment integration.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3>Machine Learning Model</h3>
+                <ul>
+                    <li>Built a predictive analytics model for sales forecasting using Python and Scikit-learn. Improved forecasting accuracy by 20%.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3>Mobile App</h3>
+                <ul>
+                    <li>Designed and developed a fitness tracking app for Android using Java. Integrated Google Maps API for route tracking.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations">
+            <h2>Recommendations</h2>
+            <div class="submit-recommendations">
+                <!--<img src="Submit-recommendations.png" alt="3 new recommendations added">-->
+            </div>
+            <div class="recommendation-list">
+                <div class="recommendation">
+                    <h3>John Doe</h3>
+                    <p>"An excellent team player who consistently delivers high-quality work on time."</p>
+                </div>
+    
+                <div class="recommendation">
+                    <h3>Jane Smith</h3>
+                    <p>"A creative problem-solver with a deep understanding of web technologies."</p>
+                </div>
+    
+                <div class="recommendation">
+                    <h3>Emily Johnson</h3>
+                    <p>"Highly recommended for any project requiring innovative thinking and technical expertise."</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="recommendations">
+            <h2>Recommendations</h2>
+            <div class="submit-recommendations">
+                <!--<img src="Submit-recommendations.png" alt="3 new recommendations added">-->
+            </div>
+            <div class="recommendation-list" id="recommendation-list">
+                <div class="recommendation">
+                    <h3>John Doe</h3>
+                    <p>"An excellent team player who consistently delivers high-quality work on time."</p>
+                </div>
+        
+                <div class="recommendation">
+                    <h3>Jane Smith</h3>
+                    <p>"A creative problem-solver with a deep understanding of web technologies."</p>
+                </div>
+        
+                <div class="recommendation">
+                    <h3>Emily Johnson</h3>
+                    <p>"Highly recommended for any project requiring innovative thinking and technical expertise."</p>
+                </div>
+            </div>
+        
+            <!-- Form to add a new recommendation -->
+            <div class="add-recommendation" style="margin-top: 20px; text-align: center;">
+                <input type="text" id="recommender-name" placeholder="Enter name" style="margin-bottom: 10px; padding: 8px; width: 200px;">
+                <br>
+                <textarea id="recommendation-text" placeholder="Enter recommendation" rows="3" style="padding: 8px; width: 300px;"></textarea>
+                <br>
+                <button onclick="addRecommendation()" style="margin-top: 10px; padding: 10px 20px; background-color: #444; color: white; border: none; cursor: pointer;">Add Recommendation</button>
+            </div>
+        </section>
+        
+        <script>
+            function addRecommendation() {
+                // Get input values
+                const name = document.getElementById('recommender-name').value;
+                const text = document.getElementById('recommendation-text').value;
+        
+                // Validate inputs
+                if (!name || !text) {
+                    alert('Please fill out both fields.');
+                    return;
+                }
+        
+                // Create new recommendation element
+                const newRecommendation = document.createElement('div');
+                newRecommendation.classList.add('recommendation');
+        
+                const nameElement = document.createElement('h3');
+                nameElement.textContent = name;
+        
+                const textElement = document.createElement('p');
+                textElement.textContent = `"${text}"`;
+        
+                newRecommendation.appendChild(nameElement);
+                newRecommendation.appendChild(textElement);
+        
+                // Add to the recommendation list
+                const recommendationList = document.getElementById('recommendation-list');
+                recommendationList.appendChild(newRecommendation);
+        
+                // Clear the input fields
+                document.getElementById('recommender-name').value = '';
+                document.getElementById('recommendation-text').value = '';
+        
+                alert('New recommendation added!');
+            }
+        </script>
+        
+<!-- Placeholder content -->
+<!--    
+    <div style="padding: 20px;">
+        <h1>Welcome to My Styled Page</h1>
+        <p>Use the navigation bar to explore the sections.</p>
+    </div>
+-->
+</body>
+</html>
